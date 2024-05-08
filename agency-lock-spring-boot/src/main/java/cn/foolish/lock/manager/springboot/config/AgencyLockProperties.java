@@ -3,8 +3,7 @@ package cn.foolish.lock.manager.springboot.config;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * @author foolish bird
- * @date 2023/1/9
+ * @author foolishbird
  */
 @ConfigurationProperties(prefix = "agency.config")
 public class AgencyLockProperties {

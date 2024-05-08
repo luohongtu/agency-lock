@@ -7,9 +7,7 @@ import java.util.concurrent.locks.Lock;
 import cn.foolishbird.agency.lock.core.AgencyLock;
 
 /**
- * @author foolish bird
- * @version 1.0
- * @date 2020-01-24
+ * @author foolishbird
  */
 public class JDKReentrantAgencyLock implements AgencyLock {
 

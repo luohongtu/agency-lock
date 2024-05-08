@@ -1,26 +1,25 @@
 package cn.foolishbird.agency.lock.core;
 
 /**
- * @author foolish bird
- * @date 2020/07/13
+ * @author foolishbird
  */
 public interface AgencyLockManger {
 
     /**
-     * 根据key获取对应的锁对象
+     * obtains the proxy lock based on the lock key
      *
-     * @param key
-     * @return
-     * @throws Exception
+     * @param key Lock key
+     * @return AgencyLock  AgencyLock
+     * @throws Exception Failure to obtain the lock reported an error
      */
     AgencyLock getLock(String key) throws Exception;
 
     /**
-     * 主动释放锁
+     * Remove a lock from the lock manager
      *
-     * @param key
-     * @throws Exception
+     * @param key Lock key
+     * @throws Exception Failure to remove the lock reported an Exception
      */
-    void releaseLock(String key) throws Exception;
+    void removeLock(String key) throws Exception;
 
 }

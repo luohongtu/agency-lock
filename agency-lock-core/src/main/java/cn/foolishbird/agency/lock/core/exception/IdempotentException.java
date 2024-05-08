@@ -1,9 +1,9 @@
 package cn.foolishbird.agency.lock.core.exception;
 
 /**
- * 幂等异常
+ * Idempotent anomaly
  *
- * @author foolish bird
+ * @author foolishbird
  */
 public class IdempotentException extends RuntimeException {
 

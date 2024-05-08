@@ -7,8 +7,7 @@ import cn.foolishbird.agency.lock.core.AgencyLock;
 import cn.foolishbird.agency.lock.core.AgencyLockManger;
 
 /**
- * @author foolish bird
- * @date 2023/1/8
+ * @author foolishbird
  */
 public class ReentrantAgencyLockManager implements AgencyLockManger {
 
@@ -36,7 +35,7 @@ public class ReentrantAgencyLockManager implements AgencyLockManger {
     }
 
     @Override
-    public void releaseLock(String key) throws Exception {
+    public void removeLock(String key) throws Exception {
 
     }
 }

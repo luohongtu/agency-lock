@@ -5,44 +5,44 @@ import java.util.concurrent.TimeUnit;
 /**
  * 业务锁抽象接口
  *
- * @author foolish bird
+ * @author foolishbird
  * @version 1.0
  * @date 2020-01-24
  */
 public interface AgencyLock {
 
     /**
-     * 尝试获取一次锁
+     * Lock attempt once
      *
-     * @return
+     * @return if true, the lock was successfully acquired
      */
     boolean tryLock();
 
     /**
-     * 尝试获取一次锁， 并设置锁自动释放时间
+     * Lock attempt once and set the lock release time automatically
      *
-     * @param waitTime  获取锁等待时长
-     * @param leaseTime 锁自动释放最大时间
-     * @param timeUnit  时间单位
-     * @return
+     * @param waitTime  obtaining the lock wait time
+     * @param leaseTime maximum time when the lock is automatically released
+     * @param timeUnit  unit of time
+     * @return if true, the lock was successfully acquired
      */
     boolean tryLock(long waitTime, long leaseTime, TimeUnit timeUnit) throws InterruptedException;
 
     /**
-     * 加锁
+     * lock
      */
     void lock();
 
     /**
-     * 枷锁
+     * lock
      *
-     * @param leaseTime 过期时间
-     * @param timeUnit  过期时间单元
+     * @param leaseTime maximum time when the lock is automatically released
+     * @param timeUnit  unit of time
      */
     void lock(long leaseTime, TimeUnit timeUnit);
 
     /**
-     * 解锁
+     * release local
      */
     void unlock();
 }

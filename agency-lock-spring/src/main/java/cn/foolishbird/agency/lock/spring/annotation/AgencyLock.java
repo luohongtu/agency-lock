@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 import org.springframework.core.annotation.AliasFor;
 
 /**
- * @author foolish bird
+ * @author foolishbird
  * @date 2023/1/8
  */
 @Documented
@@ -21,35 +21,35 @@ public @interface AgencyLock {
     /**
      * alias for key
      *
-     * @return
+     * @return key
      */
     String value() default "";
 
     /**
-     * key
+     * lock key
      *
-     * @return
+     * @return lock key
      */
     String key() default "";
 
     /**
-     * key生成策略
+     * Gets the policy name of the key generation policy from the context object
      *
-     * @return
+     * @return the policy name of the key generation policy
      */
     String keyGenerator() default "";
 
     /**
-     * 加锁时间，超过该时长自动解锁，默认单位为：秒
+     * maximum time when the lock is automatically released
      *
-     * @return
+     * @return maximum time
      */
     long leaseTime() default -1;
 
     /**
-     * 锁时长单位
+     * time unit
      *
-     * @return
+     * @return time unit
      */
     TimeUnit timeUnit() default TimeUnit.SECONDS;
 

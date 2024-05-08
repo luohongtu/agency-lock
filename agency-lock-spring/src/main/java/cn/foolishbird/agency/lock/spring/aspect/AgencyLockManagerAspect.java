@@ -20,7 +20,7 @@ import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author: foolish bird
+ * @author: foolishbird
  * @date: 2023/1/10
  */
 @Aspect
@@ -86,10 +86,8 @@ public class AgencyLockManagerAspect implements ApplicationContextAware {
         try {
             return point.proceed(point.getArgs());
         } finally {
-            // 解锁
             lock.unlock();
-            // 手动释放掉锁
-            agencyLockManger.releaseLock(key);
+            agencyLockManger.removeLock(key);
         }
     }
 

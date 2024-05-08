@@ -7,12 +7,11 @@ import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author: foolish bird
- * @date: 2023/1/11
+ * @author foolishbird
  */
 public class RedissonReentrantAgencyLock implements AgencyLock {
 
-    private RLock lock;
+    private final RLock lock;
 
     public RedissonReentrantAgencyLock(RLock lock) {
         if (Objects.isNull(lock)) {

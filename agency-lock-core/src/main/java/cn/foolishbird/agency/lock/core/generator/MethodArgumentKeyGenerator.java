@@ -6,8 +6,7 @@ import java.lang.reflect.Method;
 import java.util.Objects;
 
 /**
- * @author: foolish bird
- * @date: 2023/1/10
+ * @author foolishbird
  */
 public class MethodArgumentKeyGenerator implements KeyGenerator<String> {
 

@@ -6,8 +6,7 @@ import java.util.Objects;
 import cn.foolishbird.agency.lock.core.KeyGenerator;
 
 /**
- * @author foolish bird
- * @date 2023/1/8
+ * @author foolishbird
  */
 public class MethodSignatureKeyGenerator implements KeyGenerator<String> {
 

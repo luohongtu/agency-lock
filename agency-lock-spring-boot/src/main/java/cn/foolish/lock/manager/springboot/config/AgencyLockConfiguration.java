@@ -16,8 +16,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 /**
- * @author: foolish bird
- * @date: 2023/1/11
+ * @author foolishbird
  */
 @Configuration
 @EnableAspectJAutoProxy
@@ -26,7 +25,7 @@ public class AgencyLockConfiguration {
 
     @Bean
     @ConditionalOnMissingBean(KeyGenerator.class)
-    public KeyGenerator keyGenerator() {
+    public KeyGenerator<String> keyGenerator() {
         return new MethodSignatureKeyGenerator();
     }
 

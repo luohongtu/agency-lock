@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.Objects;
 
 /**
- * @author: foolish bird
+ * @author: foolishbird
  * @date: 2023/1/11
  */
 public class RedissonReentrantAgencyLockManager implements AgencyLockManger {
@@ -30,7 +30,7 @@ public class RedissonReentrantAgencyLockManager implements AgencyLockManger {
     }
 
     @Override
-    public void releaseLock(String key) throws Exception {
+    public void removeLock(String key) throws Exception {
         // nothting to do
     }
 

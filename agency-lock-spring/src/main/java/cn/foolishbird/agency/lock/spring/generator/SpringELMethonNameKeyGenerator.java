@@ -12,9 +12,7 @@ import org.springframework.util.StringUtils;
 import java.lang.reflect.Method;
 
 /**
- * spring el表达式
- *
- * @author foolish bird
+ * @author foolishbird
  */
 public class SpringELMethonNameKeyGenerator implements KeyGenerator<String> {
 

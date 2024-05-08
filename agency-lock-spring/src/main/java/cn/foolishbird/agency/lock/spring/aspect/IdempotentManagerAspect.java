@@ -20,7 +20,7 @@ import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author foolish bird
+ * @author foolishbird
  */
 @Aspect
 public class IdempotentManagerAspect implements ApplicationContextAware {

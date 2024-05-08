@@ -3,18 +3,19 @@ package cn.foolishbird.agency.lock.core;
 import java.lang.reflect.Method;
 
 /**
- * @author foolish bird
- * @date 2020-07-13
+ * @author foolishbird
  */
 @FunctionalInterface
 public interface KeyGenerator<R> {
 
     /**
-     * key生成策略
-     * @param target
-     * @param method
-     * @param params
-     * @return
+     * Lock key generation policy
+     *
+     * @param key    key
+     * @param target lock the object of the method
+     * @param method lock method
+     * @param params method args
+     * @return lock key
      */
     R keyGenerator(String key, Object target, Method method, Object... params);
 
