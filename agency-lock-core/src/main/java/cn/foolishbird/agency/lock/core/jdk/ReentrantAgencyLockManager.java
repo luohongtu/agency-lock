@@ -20,17 +20,17 @@ import java.util.Objects;
 import java.util.concurrent.locks.ReentrantLock;
 
 import cn.foolishbird.agency.lock.core.AgencyLock;
-import cn.foolishbird.agency.lock.core.AgencyLockManger;
+import cn.foolishbird.agency.lock.core.NonRemoveAgencyLockManager;
 
 /**
  * @author foolishbird
  */
-public class ReentrantAgencyLockManager implements AgencyLockManger {
+public class ReentrantAgencyLockManager extends NonRemoveAgencyLockManager {
 
     /**
-     * 锁
+     * lock cache
      */
-    private volatile WeakConcurrentMap<String, AgencyLock> lockCache = new WeakConcurrentMap<>();
+    private final WeakConcurrentMap<String, AgencyLock> lockCache = new WeakConcurrentMap<>();
 
     @Override
     public AgencyLock getLock(String key) throws Exception {
@@ -40,8 +40,8 @@ public class ReentrantAgencyLockManager implements AgencyLockManger {
 
         AgencyLock lock = lockCache.getIfPresent(key);
 
-        // 初始化锁
-        if (null == lock) {
+        // Initialize lock
+        if (Objects.isNull(lock)) {
             synchronized (lockCache) {
                 lock = new JDKReentrantAgencyLock(new ReentrantLock());
                 lockCache.putIfProbablyAbsent(key, lock);
@@ -50,8 +50,4 @@ public class ReentrantAgencyLockManager implements AgencyLockManger {
         return lock;
     }
 
-    @Override
-    public void removeLock(String key) throws Exception {
-
-    }
 }

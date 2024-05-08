@@ -27,6 +27,9 @@ import cn.foolishbird.agency.lock.core.AgencyLock;
  */
 public class JDKReentrantAgencyLock implements AgencyLock {
 
+    /**
+     * lock
+     */
     protected Lock lock;
 
     public JDKReentrantAgencyLock(Lock lock) {

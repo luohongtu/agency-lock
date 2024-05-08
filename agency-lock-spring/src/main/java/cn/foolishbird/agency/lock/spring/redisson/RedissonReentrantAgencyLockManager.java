@@ -18,6 +18,7 @@ package cn.foolishbird.agency.lock.spring.redisson;
 
 import cn.foolishbird.agency.lock.core.AgencyLock;
 import cn.foolishbird.agency.lock.core.AgencyLockManger;
+import cn.foolishbird.agency.lock.core.NonRemoveAgencyLockManager;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,7 @@ import java.util.Objects;
 /**
  * @author foolishbird
  */
-public class RedissonReentrantAgencyLockManager implements AgencyLockManger {
+public class RedissonReentrantAgencyLockManager extends NonRemoveAgencyLockManager {
 
     private RedissonClient redissonClient;
 
@@ -42,11 +43,6 @@ public class RedissonReentrantAgencyLockManager implements AgencyLockManger {
         }
         RLock lock = redissonClient.getLock(key);
         return new RedissonReentrantAgencyLock(lock);
-    }
-
-    @Override
-    public void removeLock(String key) throws Exception {
-        // nothting to do
     }
 
     public RedissonClient getRedissonClient() {
