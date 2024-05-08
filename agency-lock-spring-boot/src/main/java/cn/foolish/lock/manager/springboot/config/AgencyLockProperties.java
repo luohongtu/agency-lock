@@ -9,7 +9,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public class AgencyLockProperties {
 
     /**
-     * 代理锁类型
+     * Proxy lock type
      */
     private String agencyLockType;
 

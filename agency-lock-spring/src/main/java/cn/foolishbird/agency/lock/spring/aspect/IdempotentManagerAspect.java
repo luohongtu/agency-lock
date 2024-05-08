@@ -77,7 +77,7 @@ public class IdempotentManagerAspect implements ApplicationContextAware {
 
         boolean lockFlag = -1 == leaseTime ? lock.tryLock() : lock.tryLock(0L, leaseTime, timeUnit);
         if (!lockFlag) {
-            throw new IdempotentException("请不要重复操作，稍等再试");
+            throw new IdempotentException("Please do not repeat the operation, wait and try again");
         }
 
         // 幂等锁，不主动释放锁，等锁过期自定释放
