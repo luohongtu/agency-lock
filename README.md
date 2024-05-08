@@ -40,16 +40,16 @@ public class AgencyLockConfig {
 ```
 - Idempotent locks are used
 ```java
-    @Idempotent(key = "#param.phone", keyGenerator = "springElGenerator", leaseTime = 6)
-    public String login(@Validated @RequestBody PhoneLoginParam param) {
-        return "token";
-    }
+@Idempotent(key = "#param.phone", keyGenerator = "springElGenerator", leaseTime = 6)
+public String login(@Validated @RequestBody PhoneLoginParam param) {
+    return "token";
+}
 ```
 
 - AgencyLock locks are used
 ```java
-    @AgencyLock(key = "#param.phone", keyGenerator = "springElGenerator", leaseTime = 6)
-    public String login(@Validated @RequestBody PhoneLoginParam param) {
-        return "token";
-    }
+@AgencyLock(key = "#param.phone", keyGenerator = "springElGenerator", leaseTime = 6)
+public String login(@Validated @RequestBody PhoneLoginParam param) {
+    return "token";
+}
 ```
