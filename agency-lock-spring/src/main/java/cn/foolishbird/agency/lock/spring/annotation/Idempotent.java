@@ -1,15 +1,13 @@
 package cn.foolishbird.agency.lock.spring.annotation;
 
-import org.springframework.core.annotation.AliasFor;
-
 import java.lang.annotation.*;
 import java.util.concurrent.TimeUnit;
 
 /**
- * 禁止重入锁
+ * This is a comment, annotated above the method, the function of the method is to idempotent restriction of the result
+ * of the operation of the method, called once and multiple times in a certain time resulting in the same business result
  *
- * @author: foolishbird
- * @date: 2023/4/4
+ * @author foolishbird
  */
 @Documented
 @Target({ElementType.METHOD})

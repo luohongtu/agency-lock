@@ -20,8 +20,7 @@ import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author: foolishbird
- * @date: 2023/1/10
+ * @author foolishbird
  */
 @Aspect
 public class AgencyLockManagerAspect implements ApplicationContextAware {

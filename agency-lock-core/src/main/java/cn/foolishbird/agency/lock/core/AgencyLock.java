@@ -6,8 +6,6 @@ import java.util.concurrent.TimeUnit;
  * 业务锁抽象接口
  *
  * @author foolishbird
- * @version 1.0
- * @date 2020-01-24
  */
 public interface AgencyLock {
 

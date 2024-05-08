@@ -9,8 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.Objects;
 
 /**
- * @author: foolishbird
- * @date: 2023/1/11
+ * @author foolishbird
  */
 public class RedissonReentrantAgencyLockManager implements AgencyLockManger {
 

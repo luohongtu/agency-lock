@@ -7,11 +7,10 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.concurrent.TimeUnit;
 
-import org.springframework.core.annotation.AliasFor;
-
 /**
+ *This is a comment that is annotated above the method and is used to execute the method once at the same time
+ *
  * @author foolishbird
- * @date 2023/1/8
  */
 @Documented
 @Target({ElementType.METHOD})
