@@ -65,13 +65,13 @@ public void test1() throws Exception {
     String key = "demoKey";
     AgencyLock lock = agencyLockManger.getLock(key);
     try {
-    lock.lock();
-    // service code
-    Thread.sleep(3000);
-    System.out.println("test success");
+      lock.lock();
+      // service code
+      Thread.sleep(3000);
+      System.out.println("test success");
     } finally {
-    lock.unlock();
-    agencyLockManger.removeLock(key);
+      lock.unlock();
+      agencyLockManger.removeLock(key);
     }
 }
 ```
