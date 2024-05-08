@@ -75,3 +75,6 @@ public void test1() throws Exception {
     }
 }
 ```
+
+## [License](./license.txt)
+agency-lock is Open Source software released under the Apache 2.0 license.
