@@ -68,7 +68,7 @@ public void test1() throws Exception {
     lock.lock();
     // service code
     Thread.sleep(3000);
-    System.out.println("测试成功");
+    System.out.println("test success");
     } finally {
     lock.unlock();
     agencyLockManger.removeLock(key);
