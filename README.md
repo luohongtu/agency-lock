@@ -10,7 +10,7 @@ application scenarios.
   `git clone https://github.com/luohongtu/agency-lock.git`
 - Install to the local repository
   `mvn clean install`
-- Add MyBatis-Plus dependency
+- Add agency-lock-spring-boot-starter dependency
 
 ```pom
 <dependency>
