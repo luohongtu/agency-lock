@@ -59,14 +59,18 @@ public String login(@Validated @RequestBody PhoneLoginParam param) {
 @Autowired
 private AgencyLockManger agencyLockManger;
 
-public void test1() throws Exception {
-      String key = "demoKey";
-      AgencyLock lock = agencyLockManger.getLock(key);
-      try {
-      // service code
-      } finally {
-      lock.unlock();
-      agencyLockManger.removeLock(key);
-  }
+    public void test1() throws Exception {
+        String key = "demoKey";
+        AgencyLock lock = agencyLockManger.getLock(key);
+        try {
+        lock.lock();
+        // service code
+        Thread.sleep(3000);
+        System.out.println("测试成功");
+        } finally {
+        lock.unlock();
+        agencyLockManger.removeLock(key);
+        }
+    }
 }
 ```
