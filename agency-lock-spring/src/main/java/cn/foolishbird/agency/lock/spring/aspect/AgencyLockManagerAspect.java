@@ -46,12 +46,9 @@ public class AgencyLockManagerAspect implements ApplicationContextAware {
 
     @Around(value = "pointcut()")
     public Object around(ProceedingJoinPoint point) throws Throwable {
-
-        //用的最多通知的签名
         Signature signature = point.getSignature();
         MethodSignature msg = (MethodSignature) signature;
 
-        //获取注解标注的方法
         Object target = point.getTarget();
         Method method = target.getClass().getMethod(msg.getName(), msg.getParameterTypes());
 
