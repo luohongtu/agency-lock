@@ -1,0 +1,138 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.foolishbird</groupId>
+    <artifactId>agency-lock</artifactId>
+    <version>1.1.1</version>
+    <packaging>pom</packaging>
+
+    <name>agency-lock</name>
+    <url>https://agency-lock.foolishbird.cn/</url>
+    <description>
+        agency-lock是一个强大且灵活的开源代理锁框架，它可以实现各种类型的锁之间动态切换，比如本地锁，一建切换成redis分布式锁，
+        在锁和业务，充当桥梁，解耦具体锁实现和业务之间的强耦合
+    </description>
+
+    <modules>
+        <module>agency-lock-core</module>
+        <module>agency-lock-spring</module>
+        <module>agency-lock-spring-boot</module>
+        <module>agency-lock-spring-boot-starter</module>
+    </modules>
+
+    <developers>
+        <developer>
+            <name>foolish bird</name>
+            <email>luohongtuyx@163.com</email>
+        </developer>
+    </developers>
+
+    <properties>
+        <!-- project -->
+        <maven.test.skip>true</maven.test.skip>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+
+        <!-- module version-->
+        <agency-lock-core.version>1.1.1</agency-lock-core.version>
+        <agency-lock-spring.version>1.1.1</agency-lock-spring.version>
+        <agency-lock-spring-boot.version>1.1.1</agency-lock-spring-boot.version>
+        <agency-lock-spring-boot-starter.version>1.1.1</agency-lock-spring-boot-starter.version>
+
+        <!-- dependencies -->
+        <spring-boot.version>2.1.0.RELEASE</spring-boot.version>
+        <spring.version>5.0.11.RELEASE</spring.version>
+        <redisson.version>3.8.2</redisson.version>
+        <slf4j.api.version>1.7.25</slf4j.api.version>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-autoconfigure</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-configuration-processor</artifactId>
+                <version>${spring-boot.version}</version>
+                <optional>true</optional>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aop</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>1.8.13</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson</artifactId>
+                <version>${redisson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.13.2</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <distributionManagement>
+        <repository>
+            <id>nexus-releases</id>
+            <name>Nexus Release Repository</name>
+            <url>http://192.168.2.102:8102/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>Nexus Snapshot Repository</name>
+            <url>http://192.168.2.102:8102/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
