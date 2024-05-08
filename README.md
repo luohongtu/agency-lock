@@ -7,8 +7,10 @@ application scenarios.
 ## Getting started
 
 - Download project
+
   `git clone https://github.com/luohongtu/agency-lock.git`
 - Install to the local repository
+
   `mvn clean install`
 - Add agency-lock-spring-boot-starter dependency
 
