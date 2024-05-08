@@ -53,3 +53,20 @@ public String login(@Validated @RequestBody PhoneLoginParam param) {
     return "token";
 }
 ```
+
+- Lock code block
+```java
+@Autowired
+private AgencyLockManger agencyLockManger;
+
+public void test1() throws Exception {
+      String key = "demoKey";
+      AgencyLock lock = agencyLockManger.getLock(key);
+      try {
+      // service code
+      } finally {
+      lock.unlock();
+      agencyLockManger.removeLock(key);
+  }
+}
+```
